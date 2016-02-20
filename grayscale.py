@@ -12,9 +12,9 @@ Constants
 '''
 
 num_vecs = 256
-n_a=4
-n_b=2
-n_c=5
+decimals_a = 4
+decimals_b = 2
+decimals_c = 5
 
 '''
 Helper Functions
@@ -27,10 +27,18 @@ def svd_recon_components(arr,n_vec,n1,n2,n3):
 CODE STARTS HERE
 '''
 
-images =['image5.jpg']
+images =['image12.TIFF']
 for img_name in images:
     img = misc.imread('images/'+img_name,flatten=True)
-    #misc.imsave('images_out/'+'grayscale_'+img_name,np.asarray(img))
-    (u,s,v) = svd_recon_components(img,num_vecs,n_a,n_b,n_c)
-    
-    print((u,s,v))
+    (a,b,c) = svd_recon_components(img,num_vecs,decimals_a,decimals_b,decimals_c)
+    re_matrix = np.matrix(a) * np.diag(b) * np.matrix(c)
+
+    json_dict = {}
+    json_dict['a'] = a.tolist()
+    json_dict['b'] = b.tolist()
+    json_dict['c'] = c.tolist()
+
+    with open('new_grayscale_data.txt','w') as outfile:
+        json.dump(json_dict,outfile)
+
+    misc.imsave('images_out/'+'grayscale_'+img_name,np.asarray(re_matrix))
