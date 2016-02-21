@@ -18,14 +18,14 @@ The femto protocol manages to compress large TIF images by up to 8 times without
 
 1) Obtain a Linode server with a fresh Ubuntu 14.04 install.
 
-2) In terminal, run ```bash $ wget https://raw.githubusercontent.com/alexcordover/femto/master/spark_setup.sh```
+2) In terminal, run ```$ wget https://raw.githubusercontent.com/alexcordover/femto/master/spark_setup.sh```
 
-3) ```bash $ chmod 755 spark_setup.sh```
+3) ```$ chmod 755 spark_setup.sh```
 
-4) ```bash $ ./spark_setup.sh``` - this downloads Spark, the SciPy stack, and other essential machine learning libraries.
+4) ```$ ./spark_setup.sh``` - this downloads Spark, the SciPy stack, and other essential machine learning libraries.
 
 At this point, the Linode server can be used as normal. If you would like to set up master/slave configuartion between multiple Linode servers, for the master server, run the following:
-5) "$ startmaster <linode public IP address>"
+5) ```$ startmaster <linode public IP address>```
 
 For each slave server, run steps 1-4 and the following:
 6) "$ startslave <master Spark URL>"
