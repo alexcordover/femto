@@ -9,7 +9,6 @@ python-matplotlib ipython ipython-notebook python-pandas python-sympy \
 python-nose python3-numpy python3-scipy python3-matplotlib ipython3 \
 ipython3-notebook python3-pandas python3-nose libtiff5-dev libjpeg8-dev \
 zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev \
-tk8.6-dev python-tk
-sudo pip install -U Pillow scikit-learn
-sudo pip3 install -U Pillow scikit-learn
-JAVA_HOME=/usr/java/default
+tk8.6-dev python-tk default-jre \
+&& sudo pip install -U Pillow scikit-learn \
+&& sudo pip3 install -U Pillow scikit-learn
