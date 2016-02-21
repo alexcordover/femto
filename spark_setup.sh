@@ -10,8 +10,11 @@ python-nose python3-numpy python3-scipy python3-matplotlib ipython3 \
 ipython3-notebook python3-pandas python3-nose libtiff5-dev libjpeg8-dev \
 zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev \
 tk8.6-dev python-tk default-jre
-sudo pip install -U jupyter Pillow scikit-learn
-sudo pip3 install -U jupyter Pillow scikit-learn
+sudo pip install -U jupyter Pillow scikit-learn cv2
+sudo pip3 install -U jupyter Pillow scikit-learn cv2
 wget https://raw.githubusercontent.com/alexcordover/femto/master/pyspark.sh
 chmod 755 pyspark.sh
 jupyter notebook --generate-config
+fprint c.NotebookApp.ip='*'\nc.NotebookApp.open_browser=False\nc.NotebookApp.port=1337 > ~/.jupyter/jupyter_notebook_config.py
+alias startmaster='./spark-1.6.0-bin-hadoop2.6/sbin/start-master.sh'
+alias startslave='./spark-1.6.0-bin-hadoop2.6/sbin/start-slave.sh'
