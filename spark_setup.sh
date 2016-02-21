@@ -15,3 +15,6 @@ sudo pip3 install -U jupyter Pillow scikit-learn cv2
 wget https://raw.githubusercontent.com/alexcordover/femto/master/pyspark.sh
 chmod 755 pyspark.sh
 jupyter notebook --generate-config
+fprint c.NotebookApp.ip='*'\nc.NotebookApp.open_browser=False\nc.NotebookApp.port=9999 > ~/.jupyter/jupyter_notebook_config.py
+alias startmaster='./spark-1.6.0-bin-hadoop2.6/sbin/start-master.sh'
+alias startslave='./spark-1.6.0-bin-hadoop2.6/sbin/start-slave.sh'
