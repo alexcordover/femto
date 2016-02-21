@@ -1,4 +1,4 @@
-# -> femto <-
+# femto
 
 Femto is a novel image compression methodology and related suite of tools designed at MHacks: Refactor. It was created to allow machine learning algorithms to run more efficiently on images by compressing them using pre-computed features. Further, the femto methodology can be reduced smaller than the size of a jpeg without sacrificing information and is transmissable by text, making it both lightweight and low overhead.
 
