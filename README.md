@@ -18,7 +18,7 @@ The femto protocol manages to compress large TIF images by up to 8 times without
 
 1) Obtain a Linode server with a fresh Ubuntu 14.04+ install.
 
-2) In terminal, run ```$ wget https://raw.githubusercontent.com/alexcordover/femto/master/spark_setup.sh```
+2) In terminal, run ```$ wget http://bit.ly/1Tt78AY```
 
 3) ```$ chmod 755 spark_setup.sh && source ./spark_setup.sh ``` - this downloads Spark, the SciPy stack, and other essential machine learning libraries.
 
