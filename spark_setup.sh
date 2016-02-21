@@ -20,8 +20,13 @@ printf c.NotebookApp.ip='*'\nc.NotebookApp.open_browser=False\nc.NotebookApp.por
 startmaster() {
   ./spark-1.6.0-bin-hadoop2.6/sbin/start-master.sh "$@"
 }
-export -f startmaster
-startslave() {
-  ./spark-1.6.0-bin-hadoop2.6/sbin/start-slave.sh"$@"
+stopmaster() {
+  ./spark-1.6.0-bin-hadoop2.6/sbin/stop-master.sh "$@"
 }
-export -f startslave
+startslave() {
+  ./spark-1.6.0-bin-hadoop2.6/sbin/start-slave.sh "$@"
+}
+stopslave() {
+  ./spark-1.6.0-bin-hadoop2.6/sbin/stop-slave.sh "$@"
+}
+export -f startslave startmaster
