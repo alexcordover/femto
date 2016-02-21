@@ -16,5 +16,5 @@ wget https://raw.githubusercontent.com/alexcordover/femto/master/pyspark.sh
 chmod 755 pyspark.sh
 jupyter notebook --generate-config
 printf c.NotebookApp.ip='*'\nc.NotebookApp.open_browser=False\nc.NotebookApp.port=1337 > ~/.jupyter/jupyter_notebook_config.py
-alias startmaster='~/spark-1.6.0-bin-hadoop2.6/sbin/start-master.sh'
-alias startslave='~/spark-1.6.0-bin-hadoop2.6/sbin/start-slave.sh'
+alias startmaster='./spark-1.6.0-bin-hadoop2.6/sbin/start-master.sh'
+alias startslave='./spark-1.6.0-bin-hadoop2.6/sbin/start-slave.sh'
