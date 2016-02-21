@@ -27,7 +27,7 @@ def svd_recon_components(arr,n_vec,n1,n2,n3):
 CODE STARTS HERE
 '''
 
-images =['image12.TIFF']
+images =['JPCLN001.tif']
 for img_name in images:
     img = misc.imread('images/'+img_name,flatten=True)
     (a,b,c) = svd_recon_components(img,num_vecs,decimals_a,decimals_b,decimals_c)
