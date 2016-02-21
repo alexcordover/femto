@@ -20,17 +20,15 @@ The femto protocol manages to compress large TIF images by up to 8 times without
 
 2) In terminal, run ```$ wget https://raw.githubusercontent.com/alexcordover/femto/master/spark_setup.sh```
 
-3) ```$ chmod 755 spark_setup.sh```
-
-4) ```$ source ./spark_setup.sh``` - this downloads Spark, the SciPy stack, and other essential machine learning libraries.
+3) ```$ chmod 755 spark_setup.sh && source ./spark_setup.sh ``` - this downloads Spark, the SciPy stack, and other essential machine learning libraries.
 
 At this point, the Linode server can be used as normal. If you would like to set up master/slave configuration between multiple Linode servers, for the master server, run the following:
 
-5) ```$ startmaster <linode public IP address>```
+4) ```$ startmaster <linode public IP address>```
 
 For each slave server, run steps 1-4 and the following:
 
-6) ```$ startslave <master Spark URL>```
+5) ```$ startslave <master Spark URL>```
 
 The master Spark URL can be found by visiting ```http://<linode master public IP address>:8080``` on a browser. At this point, setup is complete.
 
