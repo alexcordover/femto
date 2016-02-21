@@ -10,4 +10,3 @@ python-nose python3-numpy python3-scipy python3-matplotlib ipython3 \
 ipython3-notebook python3-pandas python3-nose libtiff5-dev libjpeg8-dev \
 zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev \
 tk8.6-dev python-tk default-jre
-printf "Pillow\nscikit-learn" > requirements.txt
