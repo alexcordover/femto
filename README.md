@@ -48,4 +48,4 @@ To use grayscale compression, do the exact same thing as above except run graysc
 
 # Reconstructing From GZIP-ed JSON
 
-The data for image reconstruction is saved as a JSON (in a text file) that has been GZIP-ed. This is the output of using either grayscale or color compression. To reconstruct the image from text, simply type ```python3 decompressor.py <name of compressed archive>```. A reconstruction of the compressed file will appear in the images_out folder.
+The data for image reconstruction is saved as a JSON (in a text file) that has been GZIP-ed. This is the output of using either grayscale or color compression. To reconstruct the image from text, first, extract the text file to the images_out folder. Then, run decompressor.ipynb to get a reconstruction of the image in the images_out file.
