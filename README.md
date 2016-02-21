@@ -17,9 +17,9 @@ The femto protocol manages to compress large TIF images by up to 8 times without
 # Linode Auto-Setup Tool Usage
 
 1) Obtain a Linode server with a fresh Ubuntu 14.04 install.
-2) In terminal, run "$ wget https://raw.githubusercontent.com/alexcordover/femto/master/spark_setup.sh"
-3) "$ chmod 755 spark_setup.sh"
-4) "$ ./spark_setup.sh" - this downloads Spark, the SciPy stack, and other essential machine learning libraries.
+2) In terminal, run ```bash $ wget https://raw.githubusercontent.com/alexcordover/femto/master/spark_setup.sh```
+3) ```bash $ chmod 755 spark_setup.sh```
+4) ```bash $ ./spark_setup.sh``` - this downloads Spark, the SciPy stack, and other essential machine learning libraries.
 
 At this point, the Linode server can be used as normal. If you would like to set up master/slave configuartion between multiple Linode servers, for the master server, run the following:
 5) "$ startmaster <linode public IP address>"
@@ -31,7 +31,7 @@ The master Spark URL can be found by visiting "http://<master server public IP a
 # Jupyter and PySpark
 
 To increase usability, Apache Spark (PySpark) will run through a Jupyter notebook. To start a Jupyter notebook, run:
-"$ ./pyspark.sh" 
+"$ ./pyspark.sh"
 on the master server. The notebook can be accessed at:
 "http://<master public IP address>:1337"
 in a browser. For further information and documentation for PySpark and Jupyter, visit Spark's documentation.  
