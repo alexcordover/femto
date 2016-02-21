@@ -16,7 +16,7 @@ The femto protocol manages to compress large TIF images by up to 8 times without
 
 # Linode Auto-Setup Tool Usage
 
-1) Obtain a Linode server with a fresh Ubuntu 14.04 install.
+1) Obtain a Linode server with a fresh Ubuntu 14.04+ install.
 
 2) In terminal, run ```$ wget https://raw.githubusercontent.com/alexcordover/femto/master/spark_setup.sh```
 
@@ -24,22 +24,28 @@ The femto protocol manages to compress large TIF images by up to 8 times without
 
 4) ```$ source ./spark_setup.sh``` - this downloads Spark, the SciPy stack, and other essential machine learning libraries.
 
-At this point, the Linode server can be used as normal. If you would like to set up master/slave configuartion between multiple Linode servers, for the master server, run the following:
+At this point, the Linode server can be used as normal. If you would like to set up master/slave configuration between multiple Linode servers, for the master server, run the following:
 
 5) ```$ startmaster <linode public IP address>```
-
-To stop the master server, run ```$ stopmaster```.
 
 For each slave server, run steps 1-4 and the following:
 
 6) ```$ startslave <master Spark URL>```
 
-To stop slave servers, run ```$ stopslave```.
-
 The master Spark URL can be found by visiting ```http://<linode master public IP address>:8080``` on a browser. At this point, setup is complete.
+
+To stop the master server, run ```$ stopmaster```. To stop slave servers, run ```$ stopslave```.
 
 # Jupyter and PySpark
 
-To increase usability, we set up Apache Spark (PySpark) to run through a Jupyter notebook. To start a Jupyter notebook, run ```$ ./pyspark.sh``` on the master server. The notebook can be accessed at ```http://<master public IP address>:1337``` in a browser. For further information and documentation for PySpark and Jupyter, visit Spark's documentation.  
+To increase usability, we set up Apache Spark (PySpark) to run through a Jupyter notebook. To start a Jupyter notebook, run ```$ ./pyspark.sh``` on the master server. The notebook can be accessed at ```http://<master public IP address>:1337``` in a browser. For further information and docpython ImageDraw line thicknessumentation for PySpark and Jupyter, visit Spark's documentation.  
 
-# Running The Femto Image Compression
+# Running The Femto Image Compression Protocol
+
+You will need an image to compress on the master server - either download it or use file transfer. For color image compression, open the colorImageCompression.ipynb, set your chosen constants, and target an image and an output location. YOU MUST HAVE A FOLDER CALLED 'images' THAT CONTAINS TARGET PHOTOS AND A FOLDER CALLED 'images_out'.  A gzip file of the data will be present in images_out.
+
+To use grayscale compression, do the exact same thing as above except run grayscale_compression.ipynb. Like with above, a gzip file  containing the compressed data will be available in images_out.
+
+# Reconstructing From GZIP-ed JSON
+
+The data for image reconstruction is saved as a JSON (in a text file) that has been GZIP-ed. This is the output of using either grayscale or color compression. To reconstruct the image from text, first, extract the text file to the images_out folder. Then, run decompressor.ipynb to get a reconstruction of the image in the images_out file.
