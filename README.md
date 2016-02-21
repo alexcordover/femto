@@ -38,6 +38,10 @@ To stop the master server, run ```$ stopmaster```. To stop slave servers, run ``
 
 # Jupyter and PySpark
 
-To increase usability, we set up Apache Spark (PySpark) to run through a Jupyter notebook. To start a Jupyter notebook, run ```$ ./pyspark.sh``` on the master server. The notebook can be accessed at ```http://<master public IP address>:1337``` in a browser. For further information and documentation for PySpark and Jupyter, visit Spark's documentation.  
+To increase usability, we set up Apache Spark (PySpark) to run through a Jupyter notebook. To start a Jupyter notebook, run ```$ ./pyspark.sh``` on the master server. The notebook can be accessed at ```http://<master public IP address>:1337``` in a browser. For further information and docpython ImageDraw line thicknessumentation for PySpark and Jupyter, visit Spark's documentation.  
 
-# Running The Femto Image Compression
+# Running The Femto Image Compression Protocol
+
+You will need an image to compress on the master server - either download it or use file transfer. For color image compression, open the colorImageCompression.ipynb, set your chosen constants, and target an image and an output location. A gzip file of the text and a reconstruction of the image will be present at the output location after running each cell.
+
+To use grayscale compression, do the exact same thing as above except run grayscale_compression.ipynb. Like with above, a gzip file  containing the compressed data and a reconstruction of the image will be available at the output location.
