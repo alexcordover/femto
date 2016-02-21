@@ -42,6 +42,10 @@ To increase usability, we set up Apache Spark (PySpark) to run through a Jupyter
 
 # Running The Femto Image Compression Protocol
 
-You will need an image to compress on the master server - either download it or use file transfer. For color image compression, open the colorImageCompression.ipynb, set your chosen constants, and target an image and an output location. YOU MUST HAVE A FOLDER CALLED 'images' THAT CONTAINS TARGET PHOTOS AND A FOLDER CALLED 'images_out'.  A gzip file of the text and a reconstruction of the image will be present in images_out.
+You will need an image to compress on the master server - either download it or use file transfer. For color image compression, open the colorImageCompression.ipynb, set your chosen constants, and target an image and an output location. YOU MUST HAVE A FOLDER CALLED 'images' THAT CONTAINS TARGET PHOTOS AND A FOLDER CALLED 'images_out'.  A gzip file of the data will be present in images_out.
 
-To use grayscale compression, do the exact same thing as above except run grayscale_compression.ipynb. Like with above, a gzip file  containing the compressed data and a reconstruction of the image will be available in images_out.
+To use grayscale compression, do the exact same thing as above except run grayscale_compression.ipynb. Like with above, a gzip file  containing the compressed data will be available in images_out.
+
+# Reconstructing From GZIP-ed JSON
+
+The data for image reconstruction is saved as a JSON (in a text file) that has been GZIP-ed. This is the output of using either grayscale or color compression. To reconstruct the image from text, simply type ```python3 decompressor.py <name of compressed archive>```. A reconstruction of the compressed file will appear in the images_out folder.
