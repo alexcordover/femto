@@ -6,6 +6,8 @@ import cv2.cv as cv
 
 
 im = cv2.imread('/home/alex/Spark/images/image11.TIFF',cv2.IMREAD_GRAYSCALE)
+im_compressed = cv2.imread('/home/alex/Spark/images_out/image11.TIFF',cv2.IMREAD_GRAYSCALE)
+
 '''
 im_copy = im.copy()
 gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
@@ -27,17 +29,22 @@ else:
 detector = cv2.SimpleBlobDetector()
 
 keypoints = detector.detect(im)
-print(len(keypoints))
+keypoints_compressed = detector.detect(im_compressed)
 
 image = Image.open('/home/alex/Spark/images/image11.TIFF')
+image_compressed = Image.open('/home/alex/Spark/images_out/image11.TIFF')
 draw = ImageDraw.Draw(image)
-for i in range(10):
+draw_compressed = ImageDraw.Draw(image_compressed)
+for i in range(min(len(keypoints),len(keypoints_compressed))):
     x = keypoints[i].pt[0]
     y = keypoints[i].pt[1]
-    print((x,y))
-    draw.ellipse((x-100,y-100,x+100,y+100))
+    x_compressed = keypoints_compressed[i].pt[0]
+    y_compressed = keypoints_compressed[i].pt[1]
+    draw.ellipse((x-100,y-100,x+100,y+100),outline='red')
+    draw_compressed.ellipse((x_compressed-100,y_compressed-100,x_compressed+100,y_compressed+100),outline='red')
 
-image.save('/home/alex/Spark/images/image11_cirlces.TIFF')
+image.save('/home/alex/Spark/images/image11_circles.TIFF')
+image_compressed.save('/home/alex/Spark/images_out/image11_circles_compressed.TIFF')
 
 #im_with_keypoints = cv2.drawKeypoints(im, keypoints, np.array([]), (0,0,255), cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
 #cv2.imshow("Keypoints",im_with_keypoints)
