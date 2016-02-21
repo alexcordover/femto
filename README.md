@@ -42,6 +42,6 @@ To increase usability, we set up Apache Spark (PySpark) to run through a Jupyter
 
 # Running The Femto Image Compression Protocol
 
-You will need an image to compress on the master server - either download it or use file transfer. For color image compression, open the colorImageCompression.ipynb, set your chosen constants, and target an image and an output location. A gzip file of the text and a reconstruction of the image will be present at the output location after running each cell.
+You will need an image to compress on the master server - either download it or use file transfer. For color image compression, open the colorImageCompression.ipynb, set your chosen constants, and target an image and an output location. YOU MUST HAVE A FOLDER CALLED 'images' THAT CONTAINS TARGET PHOTOS AND A FOLDER CALLED 'images_out'.  A gzip file of the text and a reconstruction of the image will be present in images_out.
 
-To use grayscale compression, do the exact same thing as above except run grayscale_compression.ipynb. Like with above, a gzip file  containing the compressed data and a reconstruction of the image will be available at the output location.
+To use grayscale compression, do the exact same thing as above except run grayscale_compression.ipynb. Like with above, a gzip file  containing the compressed data and a reconstruction of the image will be available in images_out.
